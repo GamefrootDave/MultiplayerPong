@@ -64,7 +64,7 @@ Phaserfroot.PluginManager.register(
       // Executed every frame.
       if (this.I_am_the_client) {
         this.owner.y = this.scene.input.manager.mousePointer.y + this.camera.posY;
-        this.scene.messageExternal( 'game-out', ['positionPlayer', this.game.GLOBAL_VARIABLES.myPlayerID, this.owner.posY, this.game.GLOBAL_VARIABLES.hostPlayerID] );
+        this.scene.messageExternal( 'game-out', ['positionPlayer', this.game.GLOBAL_VARIABLES.myPlayerID, this.owner.y, this.game.GLOBAL_VARIABLES.hostPlayerID] );
       }
     }
 

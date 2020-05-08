@@ -58,8 +58,7 @@ Phaserfroot.PluginManager.register(
         if (this.owner.x > 960 || this.owner.x < 0) {
           this.owner.x = 480;
           this.owner.y = 270;
-          this.owner.body.velocity.x = (-150);
-          this.owner.body.velocity.y = 30;
+          this.start_the_ball(  );
         } else if (this.owner.y > 540 || this.owner.y < 0) {
           this.owner.body.velocity.y = (this.owner.body.velocity.y * -1);
         }
@@ -85,14 +84,18 @@ Phaserfroot.PluginManager.register(
         // If I am the host, then I setup the ball
         this.I_am_the_host = true;
         this.owner.body.bounce.set( 1.05 );
-        this.owner.body.velocity.x = (-150);
-        this.owner.body.velocity.y = 30;
+        this.start_the_ball(  );
       } else {
         // If I'm not the host, I just position the ball where the host says
         this.I_am_the_host = false;
         this.owner.alpha = 0.5;
       }
 
+    }
+
+    start_the_ball (  ) {
+      this.owner.body.velocity.x = (-300);
+      this.owner.body.velocity.y = 30;
     }
 
     onMessageReceived ( name, message ) {
